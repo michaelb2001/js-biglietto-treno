@@ -10,4 +10,50 @@ L’output del prezzo finale va messo fuori in forma umana
 */
 
 
-let km = parseFloat(prompt("inserire numero di km da percorrere : "));
+let km = parseFloat( prompt("inserire numero di km da percorrere : ") );
+
+console.log(km);
+
+let etaPassegero = parseInt( prompt("inserire età passegero : ") );
+
+console.log(etaPassegero);
+
+const prezzoAlKm = 0.21;
+
+let spesaKm = (parseFloat(prezzoAlKm * km)).toFixed(2);
+
+let prezzoFinale = 0 ;
+
+console.log(spesaKm);
+
+if( etaPassegero < 18 ){
+
+    let sconto = parseFloat((spesaKm * 20)/100);
+
+    prezzoFinale = spesaKm - sconto;
+
+} else if ( etaPassegero > 65 ){
+
+    let sconto = (spesaKm * 40)/100;
+
+    prezzoFinale = spesaKm - sconto;
+    
+} else {
+
+    prezzoFinale = spesaKm;
+}
+
+let prezzoFinaleDueCifre = prezzoFinale.toFixed(2);
+
+console.log(prezzoFinaleDueCifre);
+
+document.write("un viaggio di "+ km + " Km con un passeggero di età pari a " + etaPassegero + " anni ha un costo complessivo di " +prezzoFinaleDueCifre +"€");
+
+
+
+
+
+ 
+
+
+
